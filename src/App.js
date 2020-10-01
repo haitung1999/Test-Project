@@ -16,8 +16,6 @@ const Stack = createStackNavigator();
 
 const App = () => {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   // return (
   //   <AuthContext.Provider value={{ setIsLoggedIn }}>
   //     <NavigationContainer>

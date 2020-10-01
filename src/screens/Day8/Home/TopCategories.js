@@ -1,24 +1,27 @@
 import React from 'react'
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native'
 import HeaderTop from './HeaderTop';
-import Button from '../../../components/Button';
 import categories from '../../../mocks/categories.json';
 
 export default function TopCategories() {
     const renderItem = ({ item }) => {
         return (
-            <Button>
+            <TouchableOpacity style={styles.button}>
                 <Image style={styles.img} source={{ uri: item.image }} />
-                <View>{item.name}</View>
-            </Button>
+                <Text style={styles.text}>
+                    {item.name}
+                </Text>
+            </TouchableOpacity>
         )
     }
+
     return (
         <View style={styles.container}>
             <HeaderTop moreIcon="filter" title="Top Categories" moreTitle="Filter" />
             <FlatList
                 style={{ marginTop: 10 }}
                 data={categories}
+                horizontal
                 keyExtractor={item => item.id}
                 renderItem={renderItem}
             />
@@ -26,4 +29,22 @@ export default function TopCategories() {
     )
 }
 
-const styles = StyleSheet.create({})
+const W = Dimensions.get('window').width / 4
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 5
+    },
+    img: {
+        width: W,
+        height: (W * 9) / 16,
+        borderRadius: 8,
+    },
+    text: {
+        padding: 8,
+        textAlign: 'center'
+    },
+    container: {
+        padding: 10
+    }
+})

@@ -9,7 +9,7 @@ import { AuthContext } from '../contexts';
 import EditProfileScreen from '../screens/Day9/EditProfile';
 import FoodDetailScreen from '../screens/Day9/FoodDetail';
 import ForgotPasswardScreen from '../screens/Day9/ForgotPassword';
-import HomeScreen from '../screens/Day9/Home';
+import HomeScreen from '../screens/Day8/Home/index';
 import AccountScreen from '../screens/Day8/Account'
 import SignInScreen from '../screens/Day8/SignIn/index';
 import SignUpScreen from '../screens/Day9/SignUp';
